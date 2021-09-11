@@ -61,7 +61,7 @@
         <part>id</part>
     </key>
 </table>
-    <table x="974" y="859" name="Departments">
+    <table x="961" y="975" name="Departments">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -72,7 +72,7 @@
             <part>id</part>
         </key>
     </table>
-    <table x="937" y="1123" name="Vacancies">
+    <table x="970" y="1070" name="Vacancies">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -108,7 +108,7 @@
             <part>id</part>
         </key>
     </table>
-    <table x="119" y="884" name="Vacancy_creation_history">
+    <table x="157" y="926" name="Vacancy_creation_history">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -144,7 +144,7 @@
             <part>id</part>
         </key>
     </table>
-    <table x="1488" y="675" name="Profiles">
+    <table x="1433" y="556" name="Profiles">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -163,10 +163,6 @@
         <row name="skype_discord" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
-        <row name="department" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Departments" row="id" />
-        </row>
         <row name="experience" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -185,11 +181,15 @@
         <row name="edit_time" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
+        <row name="vacancy_id" null="1" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Vacancies" row="id" />
+        </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="149" y="437" name="email_templates">
+    <table x="431" y="377" name="email_templates">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -205,17 +205,18 @@
         <row name="edit_date" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
-        <row name="user_id" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default></row>
         <row name="type_id" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
+        <row name="created_user" null="1" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Users" row="id" />
+        </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="693" y="182" name="user_chat_profile">
+    <table x="835" y="215" name="user_chat_profile">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -238,7 +239,7 @@
             <part>id</part>
         </key>
     </table>
-    <table x="957" y="677" name="interview_estimation_criteria">
+    <table x="1000" y="650" name="interview_estimation_criteria">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -288,17 +289,13 @@
             <part>id</part>
         </key>
     </table>
-    <table x="1460" y="1132" name="interview_result">
+    <table x="1078" y="822" name="interview_result">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
-        <row name="profile_id" null="1" autoincrement="0">
+        <row name="interview_estimations" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Profiles" row="id" />
-        </row>
-        <row name="interviewer_id" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Users" row="id" />
+            <default>NULL</default><relation table="interview_estimation_criteria" row="id" />
         </row>
         <row name="status" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
@@ -310,7 +307,7 @@
             <part>id</part>
         </key>
     </table>
-    <table x="542" y="1061" name="Requirements">
+    <table x="547" y="1008" name="Requirements">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
