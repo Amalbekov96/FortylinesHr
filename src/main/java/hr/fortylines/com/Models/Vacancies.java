@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -16,9 +17,9 @@ public class Vacancies extends BaseEntity{
     @ManyToOne
     private Departments department;
     private VacancyStatus status;
-    @OneToMany(mappedBy = "vacancies")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Requirements> requirement;
-    @OneToMany(mappedBy = "vacancies")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Competencies> competency;
     private String description;
     @CreationTimestamp

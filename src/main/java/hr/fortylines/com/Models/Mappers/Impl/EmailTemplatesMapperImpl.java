@@ -3,9 +3,10 @@ package hr.fortylines.com.Models.Mappers.Impl;
 import hr.fortylines.com.Models.Dto.EmailTemplatesDto;
 import hr.fortylines.com.Models.EmailTemplates;
 import hr.fortylines.com.Models.Mappers.EmailTemplatesMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class EmailTemplatesMapperImpl implements EmailTemplatesMapper {
     @Override
     public EmailTemplates toEntity(EmailTemplatesDto emailTemplatesDto) {

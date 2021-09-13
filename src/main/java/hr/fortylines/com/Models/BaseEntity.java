@@ -9,5 +9,5 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class BaseEntity {
     @Id
-    private int id;
+    private long id;
 }
