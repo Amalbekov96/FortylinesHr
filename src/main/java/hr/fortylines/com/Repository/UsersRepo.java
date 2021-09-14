@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsersRepo extends BaseRepo<Users>{
+
+    Users findByUnsername(String username);
 }
